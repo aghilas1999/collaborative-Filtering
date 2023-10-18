@@ -239,17 +239,14 @@ def parse_args():
 
 
 if __name__ == '__main__':
-    # get args
-    args = parse_args()
-    data_path = args.path
-    movies_filename = args.movies_filename
-    ratings_filename = args.ratings_filename
-    movie_name = args.movie_name
-    top_n = args.top_n
+    # Définissez les chemins vers les fichiers directement ici
+    path_movies = 'movies.csv'  # Remplacez par le chemin réel vers le fichier movies.csv
+    path_ratings = 'ratings.csv'  # Remplacez par le chemin réel vers le fichier ratings.csv
+    movie_name = 'Jumanji'  # Le film pour lequel vous souhaitez des recommandations
+    top_n = 10  # Le nombre de recommandations que vous souhaitez obtenir
+
     # initial recommender system
-    recommender = KnnRecommender(
-        os.path.join(data_path, movies_filename),
-        os.path.join(data_path, ratings_filename))
+    recommender = KnnRecommender(path_movies, path_ratings)
     # set params
     recommender.set_filter_params(50, 50)
     recommender.set_model_params(20, 'brute', 'cosine', -1)
