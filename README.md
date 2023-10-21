@@ -9,4 +9,3 @@ Vous utiliserez la méthode vu en cours via la mesure de similarité Pearson.
 
 
 Au final, lorsque l'on donne un utilisateur, le système retourne une liste de 10 films qu'il n'a pas regardé mais qu'on lui suggère de regarder. 
-
