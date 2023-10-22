@@ -53,7 +53,8 @@ movie_counts = ratings[ratings['movieId'].isin(recommended_movies)]['movieId'].v
 recommended_movies = sorted(recommended_movies, key=lambda x: -movie_counts.get(x, 0))
 
 # Afficher les films recommandés
-print("Films recommandés pour l'utilisateur", user_id_cible)
-for movie_id in recommended_movies:
+# Afficher les dix meilleurs films recommandés
+print("Top 10 des films recommandés pour l'utilisateur", user_id_cible)
+for movie_id in recommended_movies[:10]:
     movie_title = movies[movies['movieId'] == movie_id]['title'].values[0]
     print(movie_title)
